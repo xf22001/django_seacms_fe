@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Cookies from 'js-cookie'
 
 // create an axios instance
 const service = axios.create({
@@ -12,6 +13,9 @@ service.interceptors.request.use(
   config => {
     // do something before request is sent
     console.log(config)
+    if (config.method === 'post') {
+      config.headers['X-CSRFToken'] = Cookies.get('csrftoken')
+    }
     return config
   },
   error => {

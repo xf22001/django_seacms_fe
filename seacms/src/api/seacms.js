@@ -1,15 +1,22 @@
 import request from '@/utils/request'
 
+function csrfToken () {
+  return request({
+    url: '/api/csrf_token',
+    method: 'get'
+  })
+}
+
 function list () {
   return request({
-    url: '/app/list',
+    url: '/api/list',
     method: 'get'
   })
 }
 
 function search (data) {
   return request({
-    url: '/app/search',
+    url: '/api/search',
     method: 'post',
     data
   })
@@ -17,5 +24,6 @@ function search (data) {
 
 export default {
   list,
-  search
+  search,
+  csrfToken
 }

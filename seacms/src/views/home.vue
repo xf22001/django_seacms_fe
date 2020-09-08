@@ -54,6 +54,7 @@ export default {
     }
   },
   created () {
+    console.log(this, 'created')
     this.fetchData()
   },
   methods: {
