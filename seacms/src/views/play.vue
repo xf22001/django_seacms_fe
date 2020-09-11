@@ -4,7 +4,7 @@
     <h2>A Vue 2.x component of <a href="https://github.com/DIYgod/DPlayer" target="_blank">DPlayer</a></h2>
     <dplayer :options="options" @play="play" ref="player"> </dplayer>
     <button class="btn btn-primary" @click="next">switch</button>
-    </div>
+</div>
 </template>
 
 <script type="text/ecmascript-6">
@@ -91,37 +91,42 @@ export default {
 </script>
 
 <style>
-  body {
+body {
     margin: 0;
     padding: 0;
     text-align: center;
-  }
-  a {
+}
+
+a {
     color: #42b983;
     text-decoration: none;
-  }
-  .dplayer {
+}
+
+.dplayer {
     width: 800px;
     margin: 50px auto;
-  }
-  h1 {
+}
+
+h1 {
     font-size: 54px;
     color: #42b983;
     margin: 30px 0 10px;
-  }
-  h2 {
+}
+
+h2 {
     font-size: 22px;
     color: #555;
-  }
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .dplayer {
-      width: 90%;
+        width: 90%;
     }
     h1 {
-      font-size: 30px;
+        font-size: 30px;
     }
     h2 {
-      font-size: 16px;
+        font-size: 16px;
     }
-  }
+}
 </style>

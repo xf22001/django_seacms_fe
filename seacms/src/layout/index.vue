@@ -33,7 +33,7 @@ export default {
     console.log(this, 'mounted')
     window.addEventListener('scroll', this.handleScroll)
     console.log('his.$store.state.settings.csrfToken', this.$store.state.settings.csrfToken)
-    this.csrfToken()
+    // this.csrfToken()
   },
   destroyed () {
     console.log(this, 'destroyed')

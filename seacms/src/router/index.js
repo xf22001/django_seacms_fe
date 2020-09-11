@@ -20,6 +20,13 @@ export default new Router({
         meta: { title: 'home', icon: 'home' }
       },
       {
+        path: 'detail/:id',
+        name: 'detail',
+        component: () => import('@/views/detail'),
+        props: true,
+        meta: { title: 'detail', icon: 'detail' }
+      },
+      {
         path: 'play',
         name: 'play',
         component: () => import('@/views/play'),

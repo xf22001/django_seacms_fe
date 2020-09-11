@@ -2,21 +2,22 @@ import request from '@/utils/request'
 
 function csrfToken () {
   return request({
-    url: '/api/csrf_token',
+    url: 'http://localhost:8000/api/csrf_token',
     method: 'get'
   })
 }
 
-function list () {
+function list (data) {
   return request({
-    url: '/api/list',
-    method: 'get'
+    url: 'http://localhost:8000/api/list',
+    method: 'post',
+    data
   })
 }
 
 function search (data) {
   return request({
-    url: '/api/search',
+    url: 'http://localhost:8000/api/search',
     method: 'post',
     data
   })
