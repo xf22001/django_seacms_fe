@@ -1,10 +1,20 @@
 <template>
 <div class="app-container">
     <div class="support-grid"></div>
+    <div class="title clearfix">
+        <div>
+            <img src="/static/favicon.ico">
+        </div>
+        <div>
+            <span>
+            seacms
+            </span>
+        </div>
+        <a target="_blank" href="/type/jiludsp.html">更多></a>
+    </div>
     <div class="band">
         <div v-for="item in list" :key="item.pk">
-            <a @click.prevent="handleLink(item.pk)"
-                class="card">
+            <a @click.prevent="handleLink(item.pk)" class="card">
                 <div class="thumb" :style="iconName(item.fields.v_pic)"></div>
                 <article>
                     <h1>{{item.fields.v_name}}</h1>
@@ -12,14 +22,9 @@
             </a>
         </div>
     </div>
-   <el-pagination
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"
-      :current-page="2"
-      :page-sizes="[20, 50, 100]"
-      :page-size="20"
-      layout="total, sizes, prev, pager, next, jumper"
-      :total="1000">
+    <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
+        :current-page="2" :page-sizes="[20, 50, 100]" :page-size="20" layout="total, sizes, prev, pager, next, jumper"
+        :total="1000">
     </el-pagination>
 </div>
 </template>
@@ -71,6 +76,45 @@ html {
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     padding: 20px 0;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+    /* content: "."; */
+    display: block;
+    /* height: 0; */
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.title {
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.title div {
+    float: left;
+    position: relative;
+    height: 100%;
+}
+
+div img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
 }
 
 .band {
@@ -131,7 +175,7 @@ html {
 }
 
 .card .thumb {
-    width:100%;
+    width: 100%;
     padding-bottom: 80%;
     background-size: contain;
     background-position: center center;
